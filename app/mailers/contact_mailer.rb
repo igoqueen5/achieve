@@ -8,7 +8,7 @@ class ContactMailer < ApplicationMailer
   def sendmail_contact(contact)
     @contact = contact
 
-    mail to: "igoqueen5@gmail.com"
+    mail to: "igoqueen5@gmail.com",
          subject:'【Achieve】お問い合わせを受付しました'
   end
 end
