@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       post :confirm
   end
 end
-  resources :contacts, only:[:index, :new, :create] do
+  resources :contacts, only:[:new, :create] do
   collection do
       post :confirm
   end
@@ -18,13 +18,13 @@ end
 
   resources :top, only:[:index] do
 end
-  root 'top#index'
+
+ root 'top#index'
 
 end
 
 
-  
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -79,4 +79,3 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
