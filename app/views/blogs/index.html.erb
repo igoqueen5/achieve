@@ -3,8 +3,16 @@
     <p><%= notice %></p>
     <h1>ブログ一覧</h1>
       <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
+
+      <div class="field">
+        <%= profile_img(@user) if profile_img(@user) %>
+        <%= f.file_field :avatar %>
+        <%= f.hidden_field :avatar_cache %>
+      </div>
+
     <% @blogs.each do |blog| %>
     <div class="row">
+      profile_img(user)
       <h3><%= blog.user_id %></h3>
       <h4><strong><%= blog.title %></strong></h4>
       <p><%= blog.content %></p>
