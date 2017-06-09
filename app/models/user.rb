@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
     has_many :blogs
 
     def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-       user = User.find_by(email: auth.info.email)
+       user = User.find_by(provider: auth.provider, uid: auth.uid)
 
        unless user
          user = User.new(
