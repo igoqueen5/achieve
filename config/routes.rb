@@ -1,15 +1,22 @@
 Rails.application.routes.draw do
+
+
   resources :blogs, only: [:index]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
+  resources :blogs do
+   resources :comments
+   post :confirm, on: :collection
+end
+
   devise_for :users, controllers:{
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :blogs, only:[:index, :new, :create, :edit, :update, :destroy] do
   collection do
       post :confirm
   end
@@ -25,10 +32,11 @@ end
 
  root 'top#index'
 
- resources :poems, only: [:index, :show]
-
-
+ resources :poems, only: [:index, :show] do
 end
+end
+
+
 
 
 
