@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
 
+  get 'relationships/destroy'
 
   resources :blogs, only: [:index]
+  resources :relationships, only: [:create, :destroy]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
@@ -16,6 +19,7 @@ end
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+  resources :users, only: [:index, :show]
   resources :blogs, only:[:index, :new, :create, :edit, :update, :destroy] do
   collection do
       post :confirm
