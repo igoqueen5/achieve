@@ -1,11 +1,11 @@
 <div class="container">
-  
+
     <p><%= notice %></p>
     <h1>ブログ一覧</h1>
       <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
 
 
-    <div class="row">
+
     <% @blogs.each do |blog| %>
 
       <h3><%= blog.user_id %></h3>
@@ -19,7 +19,7 @@
 
 
 
-    </div>
+    
 
    <div>
       <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
