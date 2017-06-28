@@ -2,7 +2,7 @@
   <h2>フォロー</h2>
 
 
-　　<div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+　　
         <% @user.followed_users.each do |user| %>
         <%= profile_img(user) %>
         <%= user.email %>
@@ -15,7 +15,7 @@
   <h2>フォロワー</h2>
 
 
-　　<div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+　　
          <% @user.followers.each do |user| %>
         <%= profile_img(user) %>
         <%= user.email %>
