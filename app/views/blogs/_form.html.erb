@@ -1,6 +1,7 @@
 <div class="container">
   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
 
+<% binding.pry %>
 <%= form_for(@blog, url: choose_new_or_edit) do |f| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
