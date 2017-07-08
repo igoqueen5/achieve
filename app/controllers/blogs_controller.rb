@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
     @comments = @blog.comments
     Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
   end
-end
+
 
   def new
     if params[:back]
@@ -61,4 +61,4 @@ end
     def set_blog
       @blog = Blog.find(params[:id])
     end
-  
+  end
