@@ -1,12 +1,12 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-
 
     config.secret_key = '06e3f0b149fab050eea1a91dacb075ac6bfec3bc3f02d6e1b979f0aa81662ae1a2f523d6bd383619ece8c653f218ba6d9f0719cfefa0217e2bee192260cafadb'
 
