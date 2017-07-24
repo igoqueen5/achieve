@@ -37,7 +37,6 @@ class BlogsController < ApplicationController
   end
 
   def update
-    @blog = Blog.find(blogs_params[:id])
     @blog.update(blogs_params)
     redirect_to blogs_path, notice: "ブログを更新しました"
   end
